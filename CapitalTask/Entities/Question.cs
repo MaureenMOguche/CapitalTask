@@ -1,4 +1,5 @@
-﻿namespace CapitalTask.Entities;
+﻿#pragma warning disable
+namespace CapitalTask.Entities;
 
 public class Question
 {

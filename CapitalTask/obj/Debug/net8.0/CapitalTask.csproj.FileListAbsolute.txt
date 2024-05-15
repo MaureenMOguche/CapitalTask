@@ -65,3 +65,4 @@ C:\Users\twarm\source\repos\CapitalTask\CapitalTask\obj\Debug\net8.0\CapitalTask
 C:\Users\twarm\source\repos\CapitalTask\CapitalTask\obj\Debug\net8.0\ref\CapitalTask.dll
 C:\Users\twarm\source\repos\CapitalTask\CapitalTask\bin\Debug\net8.0\CapitalTask.xml
 C:\Users\twarm\source\repos\CapitalTask\CapitalTask\obj\Debug\net8.0\CapitalTask.xml
+C:\Users\twarm\source\repos\CapitalTask\CapitalTask\obj\Debug\net8.0\CapitalTask.sourcelink.json

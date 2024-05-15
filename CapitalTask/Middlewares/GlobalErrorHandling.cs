@@ -1,4 +1,5 @@
-﻿using CapitalTask.Response;
+﻿#pragma warning disable
+using CapitalTask.Response;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace CapitalTask.Middlewares;

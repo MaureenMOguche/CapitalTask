@@ -1,4 +1,5 @@
-﻿namespace CapitalTask.Response;
+﻿#pragma warning disable
+namespace CapitalTask.Response;
 
 public class ApiResponse
 {

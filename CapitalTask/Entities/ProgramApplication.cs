@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 
+#pragma warning disable
 namespace CapitalTask.Entities;
 
 public class ProgramApplication

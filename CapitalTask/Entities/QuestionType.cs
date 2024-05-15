@@ -1,5 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
+﻿#pragma warning disable
 namespace CapitalTask.Entities;
 
 public enum QuestionType

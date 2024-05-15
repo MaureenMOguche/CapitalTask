@@ -2,8 +2,16 @@
 
 namespace CapitalTask.Data;
 
+/// <summary>
+/// Cosmos Db configuration class
+/// </summary>
 public static class ConfigureCosmos
 {
+    /// <summary>
+    /// Initializes cosmos db with the appropriate settings from config
+    /// </summary>
+    /// <param name="config"></param>
+    /// <returns></returns>
     public static async Task<CosmosDbService> Initialize(IConfiguration config)
     {
         var databaseName = config["CosmosDb:DatabaseName"];

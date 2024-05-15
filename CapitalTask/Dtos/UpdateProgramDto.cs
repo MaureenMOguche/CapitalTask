@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿#pragma warning disable
+using System.Text.Json.Serialization;
 
 namespace CapitalTask.Dtos;
 

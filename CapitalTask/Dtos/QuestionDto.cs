@@ -1,6 +1,5 @@
 ﻿using CapitalTask.Entities;
 using Newtonsoft.Json;
-using System.Text.Json.Serialization;
 
 #pragma warning disable
 

@@ -1,4 +1,5 @@
-﻿using CapitalTask.Entities;
+﻿#pragma warning disable
+using CapitalTask.Entities;
 using FluentValidation;
 
 namespace CapitalTask.Dtos;

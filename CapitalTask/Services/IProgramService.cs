@@ -1,5 +1,5 @@
-﻿using CapitalTask.Dtos;
-using CapitalTask.Entities;
+﻿#pragma warning disable
+using CapitalTask.Dtos;
 using CapitalTask.Response;
 
 namespace CapitalTask.Services;
@@ -11,6 +11,6 @@ public interface IProgramService
     Task<ApiResponse> GetPrograms();
     Task<ApiResponse> UpdateQuestions(string programId, UpdateProgramDto updateProgram);
     Task<ApiResponse> DeleteProgram(string programId);
-    Task<ApiResponse> ApplyForProgram(ProgramApplication programApplication);
+    Task<ApiResponse> ApplyForProgram(ProgramApplicationDto programApplication);
 }
 

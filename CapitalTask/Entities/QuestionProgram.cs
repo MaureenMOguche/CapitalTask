@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿#pragma warning disable
+using Newtonsoft.Json;
 
 namespace CapitalTask.Entities;
 

@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿#pragma warning disable
+using FluentValidation;
 
 namespace CapitalTask.Dtos;
 
