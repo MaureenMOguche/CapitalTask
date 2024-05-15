@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CapitalTask</name>
+    </assembly>
+    <members>
+        <member name="T:Test.Controllers.ProgramsController">
+            <summary>
+            Contoller for managing programs
+            </summary>
+            <param name="programService"></param>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.#ctor(CapitalTask.Services.IProgramService)">
+            <summary>
+            Contoller for managing programs
+            </summary>
+            <param name="programService"></param>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.CreateProgram(CapitalTask.Dtos.CreateProgramDto)">
+            <summary>
+            Creates a new program
+            </summary>
+            <param name="programDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.GetPrograms">
+            <summary>
+            Gets all programs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.GetProgram(System.String)">
+            <summary>
+            Gets a single program by it's id
+            </summary>
+            <param name="programId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.UpdateProgramQuestions(System.String,CapitalTask.Dtos.UpdateProgramDto)">
+            <summary>
+            Update questions for a program
+            </summary>
+            <param name="programId"></param>
+            <param name="updateProgram"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.DeleteProgram(System.String)">
+            <summary>
+            Deletes a program
+            </summary>
+            <param name="programId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.ApplyForProgram(CapitalTask.Entities.ProgramApplication)">
+            <summary>
+            Apply for a program
+            </summary>
+            <param name="programApplication"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
