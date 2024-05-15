@@ -37,9 +37,9 @@ public class ProgramsController(IProgramService programService) : ControllerBase
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
     [HttpGet("get-programs")]
-    public async Task<IActionResult> GetPrograms()
+    public async Task<IActionResult> GetPrograms(BaseQueryParams queryParams)
     {
-        var response = await programService.GetPrograms();
+        var response = await programService.GetPrograms(queryParams);
         return StatusCode(response.StatusCode, response);
     }
 
@@ -101,9 +101,22 @@ public class ProgramsController(IProgramService programService) : ControllerBase
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
     [HttpPost("apply-for-program/{programId}")]
-    public async Task<IActionResult> ApplyForProgram(ProgramApplication programApplication)
+    public async Task<IActionResult> ApplyForProgram(ProgramApplicationDto programApplication)
     {
         var response = await programService.ApplyForProgram(programApplication);
+        return StatusCode(response.StatusCode, response);
+    }
+
+    /// <summary>
+    /// Get all applications
+    /// </summary>
+    /// <returns></returns>
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
+    [HttpGet("get-applications")]
+    public async Task<IActionResult> GetAllApplications()
+    {
+        var response = await programService.GetAllApplications();
         return StatusCode(response.StatusCode, response);
     }
 }

@@ -23,7 +23,7 @@
             <param name="programDto"></param>
             <returns></returns>
         </member>
-        <member name="M:Test.Controllers.ProgramsController.GetPrograms">
+        <member name="M:Test.Controllers.ProgramsController.GetPrograms(CapitalTask.Dtos.BaseQueryParams)">
             <summary>
             Gets all programs
             </summary>
@@ -51,12 +51,108 @@
             <param name="programId"></param>
             <returns></returns>
         </member>
-        <member name="M:Test.Controllers.ProgramsController.ApplyForProgram(CapitalTask.Entities.ProgramApplication)">
+        <member name="M:Test.Controllers.ProgramsController.ApplyForProgram(CapitalTask.Dtos.ProgramApplicationDto)">
             <summary>
             Apply for a program
             </summary>
             <param name="programApplication"></param>
             <returns></returns>
+        </member>
+        <member name="M:Test.Controllers.ProgramsController.GetAllApplications">
+            <summary>
+            Get all applications
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CapitalTask.Data.ConfigureCosmos">
+            <summary>
+            Cosmos Db configuration class
+            </summary>
+        </member>
+        <member name="M:CapitalTask.Data.ConfigureCosmos.Initialize(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes cosmos db with the appropriate settings from config
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CapitalTask.Data.CosmosDbService">
+            <summary>
+            Service for access cosmos db
+            </summary>
+        </member>
+        <member name="M:CapitalTask.Data.CosmosDbService.#ctor(Microsoft.Azure.Cosmos.CosmosClient,System.String,System.String)">
+            <summary>
+            Constructor to receive database name and container name and fetch cosmos container
+            </summary>
+            <param name="cosmosClient"></param>
+            <param name="databaseName"></param>
+            <param name="containerName"></param>
+        </member>
+        <member name="M:CapitalTask.Data.CosmosDbService.AddItemAsync``1(``0,System.String)">
+            <summary>
+            Add item to cosmosdb
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CapitalTask.Services.ProgramService">
+            <summary>
+            Service for program logic
+            </summary>
+            <param name="cosmosDbService"></param>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.#ctor(CapitalTask.Data.ICosmosDbService)">
+            <summary>
+            Service for program logic
+            </summary>
+            <param name="cosmosDbService"></param>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.ApplyForProgram(CapitalTask.Dtos.ProgramApplicationDto)">
+            <summary>
+            Apply fo a program
+            </summary>
+            <param name="programApplication"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.CreateProgram(CapitalTask.Dtos.CreateProgramDto)">
+            <summary>
+            Create Program
+            </summary>
+            <param name="programDto"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.DeleteProgram(System.String)">
+            <summary>
+            Delete Program
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.GetProgram(System.String)">
+            <summary>
+            Get single program
+            </summary>
+            <param name="programId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.GetPrograms(CapitalTask.Dtos.BaseQueryParams)">
+            <summary>
+            Get all programs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CapitalTask.Services.ProgramService.UpdateQuestions(System.String,CapitalTask.Dtos.UpdateProgramDto)">
+            <summary>
+            Update a program questions
+            </summary>
+            <param name="programId"></param>
+            <param name="updateProgram"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
         </member>
     </members>
 </doc>

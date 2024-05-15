@@ -3,6 +3,7 @@ using CapitalTask.Data;
 using CapitalTask.Dtos;
 using CapitalTask.Entities;
 using CapitalTask.Response;
+using System;
 
 namespace CapitalTask.Services;
 
@@ -116,6 +117,13 @@ public class ProgramService(ICosmosDbService cosmosDbService) : IProgramService
         return ApiResponse.Success("Successfully deleted program");
     }
 
+    public async Task<ApiResponse> GetAllApplications()
+    {
+        var applications = await cosmosDbService.GetItemsAsync<ProgramApplication>("Select * from c");
+
+        return ApiResponse<object>.Success(applications, applications.Any() ? "Successfully retrieved applications" : "There are currently no applications");
+    }
+
 
     /// <summary>
     /// Get single program
@@ -136,11 +144,19 @@ public class ProgramService(ICosmosDbService cosmosDbService) : IProgramService
     /// Get all programs
     /// </summary>
     /// <returns></returns>
-    public async Task<ApiResponse> GetPrograms()
+    public async Task<ApiResponse> GetPrograms(BaseQueryParams queryParams)
     {
-        var programs = await cosmosDbService.GetItemsAsync<QuestionProgram>("Select * from c");
+        IEnumerable<QuestionProgram>? programs;
 
-        return ApiResponse<object>.Success(programs, programs.Any() ? "Successfully retrieved programs" : "There are currently no programs");
+        if (!string.IsNullOrEmpty(queryParams.Search))
+            programs = await cosmosDbService.GetItemsAsync<QuestionProgram>($"Select * from c where c.title like '%{queryParams.Search}%' " +
+                $" or c.description like '%{queryParams.Search}%' ");
+
+        programs = await cosmosDbService.GetItemsAsync<QuestionProgram>("Select * from c");
+
+        var paginated = programs.Paginate(queryParams.PageNumber, queryParams.PageSize);
+
+        return ApiResponse<object>.Success(paginated, programs.Any() ? "Successfully retrieved programs" : "There are currently no programs");
     }
 
 

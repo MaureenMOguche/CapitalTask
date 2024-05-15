@@ -8,9 +8,10 @@ public interface IProgramService
 {
     Task<ApiResponse> CreateProgram(CreateProgramDto program);
     Task<ApiResponse> GetProgram(string programId);
-    Task<ApiResponse> GetPrograms();
+    Task<ApiResponse> GetPrograms(BaseQueryParams queryParams);
     Task<ApiResponse> UpdateQuestions(string programId, UpdateProgramDto updateProgram);
     Task<ApiResponse> DeleteProgram(string programId);
     Task<ApiResponse> ApplyForProgram(ProgramApplicationDto programApplication);
+    Task<ApiResponse> GetAllApplications();
 }
 
